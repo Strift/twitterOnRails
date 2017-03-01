@@ -3,7 +3,7 @@
   = comment.commenter
 %p
   %strong Comment:
-  = comment.content
+  = raw comment.html_content
 %p
   = link_to 'Destroy Comment', [comment.tweet, comment], |
     method: :delete,                                     |
