@@ -31,3 +31,5 @@ set :repo_url, "git@github.com:Strift/twitterOnRails.git"
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
+
+set :deploy_to, '/home/Strift/twitter_on_rails/'
