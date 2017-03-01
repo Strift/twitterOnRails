@@ -1,0 +1,22 @@
+<h1>Listing Tweets</h1>
+
+<%= link_to 'New tweet', new_tweet_path %>
+ 
+<table>
+  <tr>
+    <th>Author</th>
+    <th>Content</th>
+  </tr>
+ 
+  <% @tweets.each do |tweet| %>
+    <tr>
+      <td><%= tweet.author %></td>
+      <td><%= tweet.content %></td>
+      <td><%= link_to 'Show', tweet_path(tweet) %></td>
+      <td><%= link_to 'Edit', edit_tweet_path(tweet) %></td>
+      <td><%= link_to 'Destroy', tweet_path(tweet),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
