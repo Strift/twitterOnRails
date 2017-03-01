@@ -15,17 +15,19 @@ ActiveRecord::Schema.define(version: 20170301120826) do
   create_table "comments", force: :cascade do |t|
     t.string   "commenter"
     t.text     "content"
+    t.string   "html_content"
     t.integer  "tweet_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.index ["tweet_id"], name: "index_comments_on_tweet_id"
   end
 
   create_table "tweets", force: :cascade do |t|
     t.string   "author"
     t.string   "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "html_content"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
 end

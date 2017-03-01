@@ -4,6 +4,7 @@ class CreateTweets < ActiveRecord::Migration[5.0]
     create_table :tweets do |t|
       t.string :author
       t.string :content
+      t.string :html_content
 
       t.timestamps
     end
