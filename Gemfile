@@ -40,6 +40,9 @@ gem 'haml'
 # Use HAML instead of ERB
 gem "haml-rails", "~> 0.9"
 
+# Markdown support
+gem 'maruku'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
