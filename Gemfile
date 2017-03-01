@@ -66,6 +66,8 @@ group :development do
   # Capistrano
   gem 'capistrano', '~> 3.6'
   gem 'capistrano-rails', '~> 1.2'
+  # bin/rails server failed and told be to add this
+  gem 'listen'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
