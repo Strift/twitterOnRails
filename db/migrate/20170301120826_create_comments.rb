@@ -11,7 +11,7 @@ class CreateComments < ActiveRecord::Migration[5.0]
   end
 
   def down
-  	delete_table :comments
+  	drop_table :comments
   end
   
 end
