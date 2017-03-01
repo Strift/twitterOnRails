@@ -4,6 +4,10 @@
 %p
   %strong Content:
   = @tweet.content
+%p
+  %strong Html Content:
+  = @tweet.html_content.html_safe
+
 %h2 Comments
 = render @tweet.comments
 %h2 Add a comment:
