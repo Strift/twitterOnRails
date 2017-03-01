@@ -1,0 +1,10 @@
+%p
+  %strong Commenter:
+  = comment.commenter
+%p
+  %strong Comment:
+  = comment.content
+%p
+  = link_to 'Destroy Comment', [comment.tweet, comment], |
+    method: :delete,                                     |
+    data: { confirm: 'Are you sure?' }                   |

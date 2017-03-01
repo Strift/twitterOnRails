@@ -1,0 +1,15 @@
+%h1 Listing Tweets
+= link_to 'New tweet', new_tweet_path
+%table
+  %tr
+    %th Author
+    %th Content
+  - @tweets.each do |tweet|
+    %tr
+      %td= tweet.author
+      %td= tweet.content
+      %td= link_to 'Show', tweet_path(tweet)
+      %td= link_to 'Edit', edit_tweet_path(tweet)
+      %td= link_to 'Destroy', tweet_path(tweet), |
+          method: :delete,                      |
+          data: { confirm: 'Are you sure?' }    |

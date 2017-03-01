@@ -1,0 +1,11 @@
+= form_for([@tweet, @tweet.comments.build]) do |f|
+  %p
+    = f.label :commenter
+    %br/
+    = f.text_field :commenter
+  %p
+    = f.label :content
+    %br/
+    = f.text_area :content
+  %p
+    = f.submit
