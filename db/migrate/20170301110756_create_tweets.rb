@@ -3,8 +3,8 @@ class CreateTweets < ActiveRecord::Migration[5.0]
   def up
     create_table :tweets do |t|
       t.string :author
-      t.string :content
-      t.string :html_content
+      t.text :content
+      t.text :html_content
 
       t.timestamps
     end
