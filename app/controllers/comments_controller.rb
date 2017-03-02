@@ -5,7 +5,8 @@ class CommentsController < ApplicationController
 	def create
 		@tweet = Tweet.find(params[:tweet_id])
 		@comment = @tweet.comments.create(comment_params)
-		@comment.html_content = Maruku.new(@comment.content).to_html
+		HardWorker.perform_async(@comment)
+		#@comment.html_content = Maruku.new(@comment.content).to_html
 		@comment.save
 		redirect_to tweet_path(@tweet)
 	end

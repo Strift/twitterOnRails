@@ -18,7 +18,8 @@ class TweetsController < ApplicationController
 
 	def create
 		@tweet = Tweet.new(tweet_params)
-		@tweet.html_content = Maruku.new(@tweet.content).to_html
+		HardWorker.perform_async(@tweet)
+		#@tweet.html_content = Maruku.new(@tweet.content).to_html
 		if @tweet.save
 			redirect_to @tweet
 		else
@@ -28,7 +29,8 @@ class TweetsController < ApplicationController
 
 	def update
 		@tweet = Tweet.find(params[:id])
-		@tweet.html_content = Maruku.new(@tweet.content).to_html
+		HardWorker.perform_async(@tweet)
+		#@tweet.html_content = Maruku.new(@tweet.content).to_html
 		if @tweet.update(tweet_params)
 			redirect_to @tweet
 		else
